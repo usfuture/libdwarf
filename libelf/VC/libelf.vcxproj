@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{1F6C9A28-676D-4257-8E17-0F22C5E82F4D}</ProjectGuid>
+    <RootNamespace>libdwarf</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.33312.129</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command />
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;HAVE_CONFIG_H;__LIBELF_INTERNAL__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)d.dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectDir)libelf.def</ModuleDefinitionFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;HAVE_CONFIG_H;__LIBELF_INTERNAL__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)d.dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectDir)libelf.def</ModuleDefinitionFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;HAVE_CONFIG_H;__LIBELF_INTERNAL__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>$(ProjectDir)libelf.def</ModuleDefinitionFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;HAVE_CONFIG_H;__LIBELF_INTERNAL__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>$(ProjectDir)libelf.def</ModuleDefinitionFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lib\32.fsize.c" />
+    <ClCompile Include="..\lib\32.getehdr.c" />
+    <ClCompile Include="..\lib\32.getphdr.c" />
+    <ClCompile Include="..\lib\32.getshdr.c" />
+    <ClCompile Include="..\lib\32.newehdr.c" />
+    <ClCompile Include="..\lib\32.newphdr.c" />
+    <ClCompile Include="..\lib\32.xlatetof.c" />
+    <ClCompile Include="..\lib\64.xlatetof.c" />
+    <ClCompile Include="..\lib\assert.c" />
+    <ClCompile Include="..\lib\begin.c" />
+    <ClCompile Include="..\lib\checksum.c" />
+    <ClCompile Include="..\lib\cntl.c" />
+    <ClCompile Include="..\lib\cook.c" />
+    <ClCompile Include="..\lib\data.c" />
+    <ClCompile Include="..\lib\end.c" />
+    <ClCompile Include="..\lib\errmsg.c" />
+    <ClCompile Include="..\lib\errno.c" />
+    <ClCompile Include="..\lib\fill.c" />
+    <ClCompile Include="..\lib\flag.c" />
+    <ClCompile Include="..\lib\gelfehdr.c" />
+    <ClCompile Include="..\lib\gelfphdr.c" />
+    <ClCompile Include="..\lib\gelfshdr.c" />
+    <ClCompile Include="..\lib\gelftrans.c" />
+    <ClCompile Include="..\lib\getarhdr.c" />
+    <ClCompile Include="..\lib\getarsym.c" />
+    <ClCompile Include="..\lib\getbase.c" />
+    <ClCompile Include="..\lib\getdata.c" />
+    <ClCompile Include="..\lib\getident.c" />
+    <ClCompile Include="..\lib\getscn.c" />
+    <ClCompile Include="..\lib\hash.c" />
+    <ClCompile Include="..\lib\input.c" />
+    <ClCompile Include="..\lib\kind.c" />
+    <ClCompile Include="..\lib\memset.c" />
+    <ClCompile Include="..\lib\ndxscn.c" />
+    <ClCompile Include="..\lib\newdata.c" />
+    <ClCompile Include="..\lib\newscn.c" />
+    <ClCompile Include="..\lib\next.c" />
+    <ClCompile Include="..\lib\nextscn.c" />
+    <ClCompile Include="..\lib\nlist.c" />
+    <ClCompile Include="..\lib\opt.delscn.c" />
+    <ClCompile Include="..\lib\rand.c" />
+    <ClCompile Include="..\lib\rawdata.c" />
+    <ClCompile Include="..\lib\rawfile.c" />
+    <ClCompile Include="..\lib\strptr.c" />
+    <ClCompile Include="..\lib\swap64.c" />
+    <ClCompile Include="..\lib\update.c" />
+    <ClCompile Include="..\lib\verdef_32_tof.c" />
+    <ClCompile Include="..\lib\verdef_32_tom.c" />
+    <ClCompile Include="..\lib\verdef_64_tof.c" />
+    <ClCompile Include="..\lib\verdef_64_tom.c" />
+    <ClCompile Include="..\lib\version.c" />
+    <ClCompile Include="..\lib\x.elfext.c" />
+    <ClCompile Include="..\lib\x.movscn.c" />
+    <ClCompile Include="..\lib\x.remscn.c" />
+    <ClCompile Include="check.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="check.c.w32">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Configuring</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Configuring</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)prebuild.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)prebuild.bat</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)check.c;$(ProjectDir)..\lib\config.h;$(ProjectDir)..\lib\sys_elf.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)check.c;$(ProjectDir)..\lib\config.h;$(ProjectDir)..\lib\sys_elf.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Configuring</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Configuring</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)prebuild.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)prebuild.bat</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)check.c;$(ProjectDir)..\lib\config.h;$(ProjectDir)..\lib\sys_elf.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)check.c;$(ProjectDir)..\lib\config.h;$(ProjectDir)..\lib\sys_elf.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\byteswap.h" />
+    <ClInclude Include="..\lib\config.h" />
+    <ClInclude Include="..\lib\elf_repl.h" />
+    <ClInclude Include="..\lib\errors.h" />
+    <ClInclude Include="..\lib\ext_types.h" />
+    <ClInclude Include="..\lib\gelf.h" />
+    <ClInclude Include="..\lib\libelf.h" />
+    <ClInclude Include="..\lib\nlist.h" />
+    <ClInclude Include="..\lib\private.h" />
+    <ClInclude Include="..\lib\sys_elf.h" />
+    <ClInclude Include="..\lib\verdef.h" />
+    <ClInclude Include="..\lib\verneed.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

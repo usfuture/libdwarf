@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Prebuild">
+      <UniqueIdentifier>{05770b4b-638c-480f-8a2d-6ba69867604f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lib\32.fsize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.getehdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.getphdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.getshdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.newehdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.newphdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\32.xlatetof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\64.xlatetof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\assert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\begin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\checksum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cntl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\cook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\end.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\errmsg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\errno.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\fill.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\flag.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\gelfehdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\gelfphdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\gelfshdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\gelftrans.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getarhdr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getarsym.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getbase.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getident.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\getscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\input.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\kind.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\memset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\ndxscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\newdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\newscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\next.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\nextscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\nlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\opt.delscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\rand.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\rawdata.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\rawfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\strptr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\swap64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\update.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\verdef_32_tof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\verdef_32_tom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\verdef_64_tof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\verdef_64_tom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\x.elfext.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\x.movscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\x.remscn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="check.c">
+      <Filter>Prebuild</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="check.c.w32">
+      <Filter>Prebuild</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\byteswap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\elf_repl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\errors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\ext_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\gelf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\libelf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\nlist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\sys_elf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\verdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\verneed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

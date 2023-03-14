@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Prebuild">
+      <UniqueIdentifier>{7b128951-7862-4474-bf21-a132b44b7b05}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\libdwarf\dwarfstring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_abbrev.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_arange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_debuglink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_die_deliv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_dnames.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_dsc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_elfread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_elf_access.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_elf_load_headers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_elf_rel_detector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_form.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_frame.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_frame2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_funcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_gdbindex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_generic_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_global.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_groups.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_harmless.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_init_finish.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_leb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_line.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_loc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_machoread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_macro.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_macro5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_names.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_object_detector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_object_read_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_original_elf_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_peread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_print_lines.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_pubtypes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_query.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_ranges.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_stringsection.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_str_offsets.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_stubs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_tied.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_tsearch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_types.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_vars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_weaks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwarf_xu_index.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\dwgetopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\gennames.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\malloc_check.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_arange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_die.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_dnames.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_encode_nm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_expr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_finish.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_forms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_frame.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_funcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_line.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_log_extra_flag_strings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_macinfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_pubnames.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_reloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_reloc_stream.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_reloc_symbolic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_section.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_types.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_vars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libdwarf\pro_weaks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="check.c">
+      <Filter>Prebuild</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\libdwarf\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_tsearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dw_elfstructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_abbrev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_arange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_base_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_debuglink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_die_deliv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_dnames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_dsc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_access.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_rel_detector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_386.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_aarch64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_arm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_mips.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_ppc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_ppc64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_sparc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elf_reloc_x86_64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elfread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_elfstructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_errmsg_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_funcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_gdbindex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_harmless.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_incl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_line_table_reader_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_loc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_loc2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_macho_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_machoread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_macro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_macro5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_names.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_names_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_names_new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_object_detector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_object_read_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_opaque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_pe_descr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_peread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reading.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_386.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_arm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_mips.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_ppc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_ppc64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_reloc_x86_64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_str_offsets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_tied_decls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_vars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_weaks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarf_xu_index.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwarfstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\dwgetopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\generated_libdwarf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\libdwarf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\libdwarf_version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\libdwarfdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\malloc_check.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\memcpy_swap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_arange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_die.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_dnames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_encode_nm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_expr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_incl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_macinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_opaque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_reloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_reloc_stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_reloc_symbolic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_section.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libdwarf\pro_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+Libdwarf and Libelf windows MSVC compatible (To be built with Visual Studio 2022 or above)
