@@ -22,11 +22,21 @@
 #ifndef _GELF_H
 #define _GELF_H
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #if __LIBELF_INTERNAL__
 #include <libelf.h>
 #else /* __LIBELF_INTERNAL__ */
 #include <libelf/libelf.h>
 #endif /* __LIBELF_INTERNAL__ */
+<<<<<<< HEAD
+=======
+=======
+#include <libelf.h>
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #if __LIBELF_NEED_LINK_H
 #include <link.h>

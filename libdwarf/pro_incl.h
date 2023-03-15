@@ -69,6 +69,39 @@
     }
 #endif /* BIG- LITTLE-ENDIAN */
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+#ifdef WORDS_BIGENDIAN
+#define ASNOUT(t,s,l)                       \
+    do {                                    \
+        unsigned sbyte = 0;                 \
+        const char *p = 0;                  \
+        if (l > sizeof(s)) {                \
+            _dwarf_p_error(dbg, error,      \
+                DW_DLE_DEBUG_FRAME_LENGTH_BAD);\
+            return DW_DLV_ERROR;            \
+        }                                   \
+        sbyte = sizeof(s) - l;              \
+        p = (const char *)(&s);             \
+        dbg->de_copy_word(t,(const void *)(p+sbyte),l);\
+    } while (0)
+#else /* LITTLEENDIAN */
+#define ASNOUT(t,s,l)                       \
+    do {                                    \
+        const char *p = 0;                  \
+        if (l > sizeof(s)) {                \
+            _dwarf_p_error(dbg, error,      \
+                DW_DLE_DEBUG_FRAME_LENGTH_BAD);\
+            return DW_DLV_ERROR;            \
+        }                                   \
+        p = (const char *)(&s);             \
+        dbg->de_copy_word(t,(const void *)p,l); \
+    } while (0)
+#endif /* ENDIANNESS */
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #if defined(sparc) && defined(sun)
 #define REL32 Elf32_Rela

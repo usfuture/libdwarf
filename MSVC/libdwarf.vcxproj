@@ -310,6 +310,13 @@
     <ClInclude Include="..\libdwarf\generated_libdwarf.h" />
     <ClInclude Include="..\libdwarf\libdwarf.h" />
     <ClInclude Include="..\libdwarf\libdwarfdefs.h" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    <ClInclude Include="..\libdwarf\libdwarf_private.h" />
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     <ClInclude Include="..\libdwarf\libdwarf_version.h" />
     <ClInclude Include="..\libdwarf\malloc_check.h" />
     <ClInclude Include="..\libdwarf\memcpy_swap.h" />

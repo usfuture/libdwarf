@@ -239,7 +239,15 @@ _dwarf_transform_simplename_to_disk(Dwarf_P_Debug dbg,
 
     /* Write the version as 2 bytes. */
     {
+<<<<<<< HEAD
         Dwarf_Half verstamp = CURRENT_VERSION_STAMP;
+=======
+<<<<<<< HEAD
+        Dwarf_Half verstamp = CURRENT_VERSION_STAMP;
+=======
+        Dwarf_Half verstamp = 2;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
         WRITE_UNALIGNED(dbg, cur_stream_bytes_ptr,
             (const void *) &verstamp,

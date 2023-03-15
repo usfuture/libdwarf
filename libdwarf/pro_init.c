@@ -31,6 +31,13 @@
 
 #include "config.h"
 #include "libdwarfdefs.h"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+#include <libelf.h>
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
@@ -40,9 +47,21 @@
 #include "pro_incl.h"
 #include "dwarf.h"
 #include "libdwarf.h"
+<<<<<<< HEAD
 #include "pro_opaque.h"
 #include "pro_error.h"
 #include "pro_encode_nm.h"
+=======
+<<<<<<< HEAD
+#include "pro_opaque.h"
+#include "pro_error.h"
+#include "pro_encode_nm.h"
+=======
+#include "dwarf_base_types.h"
+#include "pro_opaque.h"
+#include "pro_error.h"
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #include "pro_alloc.h"
 #include "pro_line.h"
 #include "memcpy_swap.h"
@@ -50,12 +69,23 @@
 #include "pro_reloc_symbolic.h"
 #include "pro_reloc_stream.h"
 #include "dwarf_tsearch.h"
+<<<<<<< HEAD
 #include "dwarfstring.h"
+=======
+<<<<<<< HEAD
+#include "dwarfstring.h"
+=======
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #define IS_64BITPTR(dbg) ((dbg)->de_flags & DW_DLC_POINTER64 ? 1 : 0)
 #define ISA_IA64(dbg) ((dbg)->de_flags & DW_DLC_ISA_IA64 ? 1 : 0)
 
 struct isa_relocs_s {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
    const char *name_;
    int         reloc32_;
    int         reloc64_;
@@ -69,10 +99,25 @@ struct isa_relocs_s {
 #define FALSE 0
 #endif /*FALSE*/
 
+<<<<<<< HEAD
+=======
+=======
+    const char* name_;
+    int         reloc32_;
+    int         reloc64_;
+    int         segrel_; /* only used if IRIX */
+};
+
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /*  Some of these may be the wrong relocation for DWARF
     relocations. FIXME. Most will be unusable without
     additional effort as they have not been tested.
 */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #define R_MIPS_32		2
 #define R_MIPS_64		18
 #define R_MIPS_SCN_DISP		32
@@ -93,6 +138,30 @@ struct isa_relocs_s {
 #define R_PPC64_REL32         R_PPC_REL32
 #define R_PPC64_REL64           44
 
+<<<<<<< HEAD
+=======
+=======
+#define R_MIPS_32         2
+#define R_MIPS_64         18
+#define R_MIPS_SCN_DISP   32
+#define R_386_32          1
+#define R_386_64          0  /* impossible */
+#define R_X86_64_32       10
+#define R_X86_64_64       1
+#define R_SPARC_UA32      23
+#define R_SPARC_UA64      54
+#define R_ARM_ABS32       2
+#define R_ARM_ABS64       0 /* impossible */
+#define R_AARCH64_ABS32   258
+#define R_AARCH64_ABS64   257
+#define R_IA64_DIR32LSB   0x25
+#define R_IA64_DIR64LSB   0x27
+#define R_PPC_REL32       26
+#define R_PPC_REL64       44
+#define R_PPC64_REL32     R_PPC_REL32
+#define R_PPC64_REL64     44
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 static struct isa_relocs_s isa_relocs[] = {
 {"irix",  R_MIPS_32,R_MIPS_64,R_MIPS_SCN_DISP},
@@ -109,11 +178,24 @@ static struct isa_relocs_s isa_relocs[] = {
 {0,0,0,0}
 };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 static int common_init(Dwarf_P_Debug dbg, Dwarf_Unsigned flags,
     const char *abiname, const char *dwarf_version,
     const char *extrainfo,
     int *error_ret);
+<<<<<<< HEAD
+=======
+=======
+static int common_init(Dwarf_P_Debug dbg, Dwarf_Unsigned flags,
+    const char* abiname, const char* dwarf_version,
+    const char* extrainfo,
+    int* error_ret);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 /*  This function sets up a new dwarf producing region.
     flags: Indicates type of access method, one of DW_DLC* macros
@@ -121,8 +203,18 @@ static int common_init(Dwarf_P_Debug dbg, Dwarf_Unsigned flags,
     errhand(): Error Handler provided by user
     errarg: Argument to errhand()
     error: returned error value */
+<<<<<<< HEAD
     /*  We want the following to have an elf section number that matches
         'nothing' */
+=======
+<<<<<<< HEAD
+    /*  We want the following to have an elf section number that matches
+        'nothing' */
+=======
+    /*  We want the following to have an elf section
+        number that matches 'nothing' */
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 static struct Dwarf_P_Section_Data_s init_sect = {
     MAGIC_SECT_NO, 0, 0, 0, 0
 };
@@ -145,7 +237,14 @@ static struct Dwarf_P_Section_Data_s init_sect_debug_line_str = {
     in a tolerant fashion, so inconsistencies in the
     selections are not noticed...but they may have a surprising
     effect.
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     The extra string is a way to allow new options without
     changing the interface. The idea is the caller might
     supply a list of such things as one string, comma-separated.
@@ -160,23 +259,54 @@ dwarf_producer_init(Dwarf_Unsigned flags,
     Dwarf_Callback_Func func,
     Dwarf_Handler errhand,
     Dwarf_Ptr errarg,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     void * user_data,
     const char *isa_name, /* See isa_reloc_s. */
     const char *dwarf_version, /* V2 V3 V4 or V5. */
     const char *extra, /* Extra input strings, comma separated. */
     Dwarf_P_Debug *dbg_returned,
     Dwarf_Error * error)
+<<<<<<< HEAD
+=======
+=======
+    void* user_data,
+    const char* isa_name, /* See isa_reloc_s. */
+    const char* dwarf_version, /* V2 V3 V4 or V5. */
+    const char* extra, /* Extra input strings, comma separated. */
+    Dwarf_P_Debug* dbg_returned,
+    Dwarf_Error* error)
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 {
     Dwarf_P_Debug dbg = 0;
     int res = 0;
     int err_ret = 0;
+<<<<<<< HEAD
     dbg = (Dwarf_P_Debug) _dwarf_p_get_alloc(NULL,
+=======
+<<<<<<< HEAD
+    dbg = (Dwarf_P_Debug) _dwarf_p_get_alloc(NULL,
+=======
+    dbg = (Dwarf_P_Debug)_dwarf_p_get_alloc(NULL,
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         sizeof(struct Dwarf_P_Debug_s));
     if (dbg == NULL) {
         DWARF_P_DBG_ERROR(dbg, DW_DLE_DBG_ALLOC,
             DW_DLV_ERROR);
     }
+<<<<<<< HEAD
     memset((void *) dbg, 0, sizeof(struct Dwarf_P_Debug_s));
+=======
+<<<<<<< HEAD
+    memset((void *) dbg, 0, sizeof(struct Dwarf_P_Debug_s));
+=======
+    memset((void*)dbg, 0, sizeof(struct Dwarf_P_Debug_s));
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     /* For the time being */
     if (func == NULL) {
         DWARF_P_DBG_ERROR(dbg, DW_DLE_NO_CALLBACK_FUNC,
@@ -186,8 +316,18 @@ dwarf_producer_init(Dwarf_Unsigned flags,
     dbg->de_errhand = errhand;
     dbg->de_errarg = errarg;
     dbg->de_user_data = user_data;
+<<<<<<< HEAD
     res = common_init(dbg, flags,isa_name,dwarf_version,
         extra,&err_ret);
+=======
+<<<<<<< HEAD
+    res = common_init(dbg, flags,isa_name,dwarf_version,
+        extra,&err_ret);
+=======
+    res = common_init(dbg, flags, isa_name, dwarf_version,
+        extra, &err_ret);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if (res != DW_DLV_OK) {
         DWARF_P_DBG_ERROR(dbg, err_ret, DW_DLV_ERROR);
     }
@@ -197,9 +337,22 @@ dwarf_producer_init(Dwarf_Unsigned flags,
 
 int
 dwarf_pro_set_default_string_form(Dwarf_P_Debug dbg,
+<<<<<<< HEAD
    int form,
    UNUSEDARG Dwarf_Error * error)
 {
+=======
+<<<<<<< HEAD
+   int form,
+   UNUSEDARG Dwarf_Error * error)
+{
+=======
+    int form,
+    Dwarf_Error* error)
+{
+    (void)error;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if (form != DW_FORM_string &&
         form != DW_FORM_strp) {
         _dwarf_p_error(dbg, error, DW_DLE_BAD_STRING_FORM);
@@ -211,6 +364,10 @@ dwarf_pro_set_default_string_form(Dwarf_P_Debug dbg,
 
 static int
 set_reloc_numbers(Dwarf_P_Debug dbg,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     UNUSEDARG Dwarf_Unsigned flags,
     const char *abiname)
 {
@@ -219,19 +376,57 @@ set_reloc_numbers(Dwarf_P_Debug dbg,
         return DW_DLV_NO_ENTRY;
     }
     for(isap = &isa_relocs[0];  ;isap++) {
+<<<<<<< HEAD
+=======
+=======
+    Dwarf_Unsigned flags,
+    const char* abiname)
+{
+    struct isa_relocs_s* isap = 0;
+
+    (void)flags;
+    if (!abiname) {
+        return DW_DLV_NO_ENTRY;
+    }
+    for (isap = &isa_relocs[0]; ; isap++) {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         if (!isap->name_) {
             /* No more names known. Never found the one we wanted. */
             return DW_DLV_NO_ENTRY;
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         if (!strcmp(abiname,isap->name_)) {
             if (dbg->de_pointer_size == 4) {
                 dbg->de_ptr_reloc = isap->reloc32_;
             } else {
+<<<<<<< HEAD
+=======
+=======
+        if (!strcmp(abiname, isap->name_)) {
+            if (dbg->de_pointer_size == 4) {
+                dbg->de_ptr_reloc = isap->reloc32_;
+            }
+            else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
                 dbg->de_ptr_reloc = isap->reloc64_;
             }
             if (dbg->de_dwarf_offset_size == 4) {
                 dbg->de_offset_reloc = isap->reloc32_;
+<<<<<<< HEAD
             } else {
+=======
+<<<<<<< HEAD
+            } else {
+=======
+            }
+            else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
                 dbg->de_offset_reloc = isap->reloc64_;
             }
             /*  segrel only meaningful for IRIX, otherwise
@@ -246,6 +441,10 @@ set_reloc_numbers(Dwarf_P_Debug dbg,
 /*  This is the Daniel J Bernstein hash function
     originally posted to Usenet news.
     http://en.wikipedia.org/wiki/List_of_hash_functions or
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     http://stackoverflow.com/questions/10696223/reason-for-5381-number-in-djb-hash-function).
     See Also DWARF5 Section 7.33
 */
@@ -259,11 +458,34 @@ _dwarf_string_hashfunc(const char *str)
     /*  Extra parens suppress warning about assign in test. */
     while ((c = *str++)) {
         hash = hash * 33 + c ;
+<<<<<<< HEAD
+=======
+=======
+    http://stackoverflow.com/questions/\
+    10696223/reason-for-5381-number-in-djb-hash-function).
+    See Also DWARF5 Section 7.33
+*/
+static DW_TSHASHTYPE
+_dwarf_string_hashfunc(const char* str)
+{
+    DW_TSHASHTYPE up = 0;
+    DW_TSHASHTYPE hash = 5381;
+    int c = 0;
+
+    /*  Extra parens suppress warning about assign in test. */
+    while ((c = *str++)) {
+        hash = hash * 33 + c;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     }
     up = hash;
     return up;
 }
 static DW_TSHASHTYPE
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 key_simple_string_hashfunc(const void *keyp)
 {
     struct Dwarf_P_debug_str_entry_s* mt =
@@ -277,10 +499,33 @@ key_simple_string_hashfunc(const void *keyp)
     } else {
         /*  ASSERT: dse_name != 0 */
         str = (const char *)mt->dse_name;
+<<<<<<< HEAD
+=======
+=======
+key_simple_string_hashfunc(const void* keyp)
+{
+    struct Dwarf_P_debug_str_entry_s* mt =
+        (struct Dwarf_P_debug_str_entry_s*)keyp;
+    const char* str = 0;
+
+    if (mt->dse_has_table_offset) {
+        /*  ASSERT: mt->dse_dbg->de_debug_str->ds_data not zero. */
+        str = (const char*)mt->dse_dbg->de_debug_str->ds_data +
+            mt->dse_table_offset;
+    }
+    else {
+        /*  ASSERT: dse_name != 0 */
+        str = (const char*)mt->dse_name;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     }
     return _dwarf_string_hashfunc(str);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 static int
 common_init(Dwarf_P_Debug dbg,
@@ -289,6 +534,18 @@ common_init(Dwarf_P_Debug dbg,
     const char *dwarf_version,
     const char *extra,
     int *err_ret)
+<<<<<<< HEAD
+=======
+=======
+static int
+common_init(Dwarf_P_Debug dbg,
+    Dwarf_Unsigned flags,
+    const char* abiname,
+    const char* dwarf_version,
+    const char* extra,
+    int* err_ret)
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 {
     unsigned int k = 0;
     int res = 0;
@@ -301,7 +558,14 @@ common_init(Dwarf_P_Debug dbg,
     dbg->de_current_active_section = &init_sect;
     dbg->de_flags = flags;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     /* DW_DLC_POINTER32 assumed. */
     dbg->de_pointer_size = 4;
     /* Standard DWARF 64bit offset, length field 12 bytes */
@@ -309,6 +573,10 @@ common_init(Dwarf_P_Debug dbg,
     dbg->de_elf_offset_size = 4;
     dbg->de_64bit_extension = 0;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     dbg->de_big_endian = (dbg->de_flags&DW_DLC_TARGET_BIGENDIAN)?
         TRUE:FALSE;
     /*  DW_DLC_POINTER64 is identical to DW_DLC_SIZE_64 */
@@ -316,6 +584,18 @@ common_init(Dwarf_P_Debug dbg,
         dbg->de_pointer_size = 8;
     }
     if(dbg->de_flags & DW_DLC_OFFSET64) {
+<<<<<<< HEAD
+=======
+=======
+    dbg->de_big_endian = (dbg->de_flags & DW_DLC_TARGET_BIGENDIAN) ?
+        true : false;
+    /*  DW_DLC_POINTER64 is identical to DW_DLC_SIZE_64 */
+    if (dbg->de_flags & DW_DLC_POINTER64) {
+        dbg->de_pointer_size = 8;
+    }
+    if (dbg->de_flags & DW_DLC_OFFSET64) {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         dbg->de_pointer_size = 8;
         dbg->de_dwarf_offset_size = 4;
         dbg->de_64bit_extension = 0;
@@ -323,19 +603,46 @@ common_init(Dwarf_P_Debug dbg,
             standard dwarf set
             de_64bit_extension to 1. */
         dbg->de_elf_offset_size = 8;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     } else {
         if(dbg->de_flags & DW_DLC_IRIX_OFFSET64) {
             dbg->de_pointer_size = 8;
             dbg->de_big_endian = TRUE;
+<<<<<<< HEAD
+=======
+=======
+    }
+    else {
+        if (dbg->de_flags & DW_DLC_IRIX_OFFSET64) {
+            dbg->de_pointer_size = 8;
+            dbg->de_big_endian = true;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
             dbg->de_dwarf_offset_size = 8;
             dbg->de_64bit_extension = 0;
             dbg->de_elf_offset_size = 8;
         }
     }
 
+<<<<<<< HEAD
     if(abiname && (!strcmp(abiname,"irix"))) {
         dbg->de_irix_exc_augmentation = 1;
     } else {
+=======
+<<<<<<< HEAD
+    if(abiname && (!strcmp(abiname,"irix"))) {
+        dbg->de_irix_exc_augmentation = 1;
+    } else {
+=======
+    if (abiname && (!strcmp(abiname, "irix"))) {
+        dbg->de_irix_exc_augmentation = 1;
+    }
+    else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         dbg->de_irix_exc_augmentation = 0;
     }
     /*  We must set reloc numbers even if doing symbolic
@@ -343,12 +650,24 @@ common_init(Dwarf_P_Debug dbg,
         we are generating debug.  A zero is interpreted
         as no relocations.  So ensure we have real
         relocations. */
+<<<<<<< HEAD
     res = set_reloc_numbers(dbg,flags,abiname);
+=======
+<<<<<<< HEAD
+    res = set_reloc_numbers(dbg,flags,abiname);
+=======
+    res = set_reloc_numbers(dbg, flags, abiname);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if (res != DW_DLV_OK) {
         *err_ret = DW_DLE_BAD_ABINAME;
         return DW_DLV_ERROR;
     }
     dbg->de_output_version = 2;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if(dwarf_version) {
         if (!strcmp(dwarf_version,"V2")) {
             dbg->de_output_version = 2;
@@ -359,12 +678,39 @@ common_init(Dwarf_P_Debug dbg,
         } else if (!strcmp(dwarf_version,"V5")) {
             dbg->de_output_version = 5;
         } else {
+<<<<<<< HEAD
+=======
+=======
+    if (dwarf_version) {
+        if (!strcmp(dwarf_version, "V2")) {
+            dbg->de_output_version = 2;
+        }
+        else if (!strcmp(dwarf_version, "V3")) {
+            dbg->de_output_version = 3;
+        }
+        else if (!strcmp(dwarf_version, "V4")) {
+            dbg->de_output_version = 4;
+        }
+        else if (!strcmp(dwarf_version, "V5")) {
+            dbg->de_output_version = 5;
+        }
+        else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
             *err_ret = DW_DLE_VERSION_STAMP_ERROR;
             return DW_DLV_ERROR;
         }
     }
     _dwarf_init_default_line_header_vals(dbg);
+<<<<<<< HEAD
     res = _dwarf_log_extra_flagstrings(dbg,extra,err_ret);
+=======
+<<<<<<< HEAD
+    res = _dwarf_log_extra_flagstrings(dbg,extra,err_ret);
+=======
+    res = _dwarf_log_extra_flagstrings(dbg, extra, err_ret);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if (res == DW_DLV_ERROR) {
         return res;
     }
@@ -372,33 +718,77 @@ common_init(Dwarf_P_Debug dbg,
     if (flags & DW_DLC_SYMBOLIC_RELOCATIONS) {
         dbg->de_relocation_record_size =
             sizeof(struct Dwarf_Relocation_Data_s);
+<<<<<<< HEAD
     } else {
+=======
+<<<<<<< HEAD
+    } else {
+=======
+    }
+    else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         /*  This is only going to work when the HOST == TARGET,
             surely? */
 #ifdef DWARF_WITH_LIBELF
 #if HAVE_ELF64_GETEHDR
         dbg->de_relocation_record_size =
+<<<<<<< HEAD
             ((dbg->de_pointer_size == 8)?
             sizeof(REL64) : sizeof(REL32));
+=======
+<<<<<<< HEAD
+            ((dbg->de_pointer_size == 8)?
+            sizeof(REL64) : sizeof(REL32));
+=======
+            ((dbg->de_pointer_size == 8) ?
+                sizeof(REL64) : sizeof(REL32));
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #else
         dbg->de_relocation_record_size = sizeof(REL32);
 #endif
 #else /* DWARF_WITH_LIBELF */
+<<<<<<< HEAD
         *err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+=======
+<<<<<<< HEAD
+        *err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+=======
+        * err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         return DW_DLV_ERROR;
 #endif /* DWARF_WITH_LIBELF */
     }
 
     /* For .debug_str creation. */
     dwarf_initialize_search_hash(&dbg->de_debug_str_hashtab,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         key_simple_string_hashfunc,0);
     dbg->de_debug_default_str_form = DW_FORM_string;
     dwarf_initialize_search_hash(&dbg->de_debug_line_str_hashtab,
         key_simple_string_hashfunc,0);
+<<<<<<< HEAD
+=======
+=======
+        key_simple_string_hashfunc, 0);
+    dbg->de_debug_default_str_form = DW_FORM_string;
+    dwarf_initialize_search_hash(&dbg->de_debug_line_str_hashtab,
+        key_simple_string_hashfunc, 0);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     if (dbg->de_dwarf_offset_size == 8) {
         if (dbg->de_output_version <= 3) {
             dbg->de_ar_data_attribute_form = DW_FORM_data8;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         } else {
             dbg->de_ar_data_attribute_form = DW_FORM_sec_offset;
         }
@@ -407,6 +797,22 @@ common_init(Dwarf_P_Debug dbg,
         if (dbg->de_output_version <= 3) {
             dbg->de_ar_data_attribute_form = DW_FORM_data4;
         } else {
+<<<<<<< HEAD
+=======
+=======
+        }
+        else {
+            dbg->de_ar_data_attribute_form = DW_FORM_sec_offset;
+        }
+        dbg->de_ar_ref_attr_form = DW_FORM_ref8;
+    }
+    else {
+        if (dbg->de_output_version <= 3) {
+            dbg->de_ar_data_attribute_form = DW_FORM_data4;
+        }
+        else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
             dbg->de_ar_data_attribute_form = DW_FORM_sec_offset;
         }
         dbg->de_ar_ref_attr_form = DW_FORM_ref4;
@@ -419,19 +825,50 @@ common_init(Dwarf_P_Debug dbg,
             _dwarf_pro_reloc_length_symbolic;
         dbg->de_transform_relocs_to_disk =
             _dwarf_symbolic_relocs_to_disk;
+<<<<<<< HEAD
     } else {
+=======
+<<<<<<< HEAD
+    } else {
+=======
+    }
+    else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #ifdef DWARF_WITH_LIBELF
         if (IS_64BITPTR(dbg)) {
             dbg->de_relocate_by_name_symbol =
                 _dwarf_pro_reloc_name_stream64;
+<<<<<<< HEAD
         } else {
+=======
+<<<<<<< HEAD
+        } else {
+=======
+        }
+        else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
             dbg->de_relocate_by_name_symbol =
                 _dwarf_pro_reloc_name_stream32;
         }
         dbg->de_relocate_pair_by_symbol = 0;
+<<<<<<< HEAD
         dbg->de_transform_relocs_to_disk = _dwarf_stream_relocs_to_disk;
 #else /* DWARF_WITH_LIBELF */
         *err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+=======
+<<<<<<< HEAD
+        dbg->de_transform_relocs_to_disk = _dwarf_stream_relocs_to_disk;
+#else /* DWARF_WITH_LIBELF */
+        *err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+=======
+        dbg->de_transform_relocs_to_disk =
+            _dwarf_stream_relocs_to_disk;
+#else /* DWARF_WITH_LIBELF */
+        * err_ret = DW_DLE_NO_STREAM_RELOC_SUPPORT;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         return DW_DLV_ERROR;
 #endif /* DWARF_WITH_LIBELF */
     }
@@ -443,7 +880,15 @@ common_init(Dwarf_P_Debug dbg,
     }
     /* First assume host, target same endianness  FIXME */
     dbg->de_same_endian = 1;
+<<<<<<< HEAD
     dbg->de_copy_word =  _dwarf_memcpy_noswap_bytes;
+=======
+<<<<<<< HEAD
+    dbg->de_copy_word =  _dwarf_memcpy_noswap_bytes;
+=======
+    dbg->de_copy_word = _dwarf_memcpy_noswap_bytes;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #ifdef WORDS_BIGENDIAN
     /* host is big endian, so what endian is target? */
     if (flags & DW_DLC_TARGET_LITTLEENDIAN) {
@@ -459,3 +904,10 @@ common_init(Dwarf_P_Debug dbg,
 #endif /* !WORDS_BIGENDIAN */
     return DW_DLV_OK;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)

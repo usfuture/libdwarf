@@ -512,5 +512,14 @@
     <ClInclude Include="..\libdwarf\pro_util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    <ClInclude Include="..\libdwarf\libdwarf_private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
   </ItemGroup>
 </Project>

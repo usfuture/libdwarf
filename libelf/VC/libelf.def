@@ -7,6 +7,14 @@ EXPORTS
 	elf_end
 	elf_errmsg
 	elf_errno
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      elf_getshdrnum
+      elf_getshdrstrndx
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 	elf_fill
 	elf_flagdata
 	elf_flagehdr

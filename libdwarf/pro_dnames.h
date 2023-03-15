@@ -36,6 +36,10 @@
 typedef Dwarf_Unsigned dn_type;
 
 struct Dwarf_P_Dnames_Head_s {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Unsigned dh_unit_length;
     unsigned       dh_version;
     dn_type dh_comp_unit_count;
@@ -46,6 +50,23 @@ struct Dwarf_P_Dnames_Head_s {
     dn_type dh_abbrev_table_size;
     dn_type dh_augmentation_string_size;
     const char *   dh_augmentation_string;
+<<<<<<< HEAD
+=======
+=======
+    dn_type dh_unit_length;
+    unsigned    dh_version;
+    unsigned    dh_offset_size;
+    dn_type     dh_offset;
+    dn_type     dh_comp_unit_count;
+    dn_type     dh_local_type_unit_count;
+    dn_type     dh_foreign_type_unit_count;
+    dn_type     dh_bucket_count;
+    dn_type     dh_name_count;
+    dn_type     dh_abbrev_table_size;
+    dn_type     dh_augmentation_string_size;
+    const char* dh_augmentation_string;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 };
 
 struct Dwarf_P_Dnames_uarray_s {
@@ -63,6 +84,10 @@ struct Dwarf_P_Dnames_sarray_s {
 struct Dwarf_P_Dnames_s {
     Dwarf_Small dn_create_section;
     struct Dwarf_P_Dnames_Head_s dn_header;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     struct Dwarf_P_Dnames_uarray_s dn_cunit_offset;
     struct Dwarf_P_Dnames_uarray_s dn_tunit_offset;
     struct Dwarf_P_Dnames_sarray_s dn_sunit_sigs;
@@ -70,12 +95,39 @@ struct Dwarf_P_Dnames_s {
     struct Dwarf_P_Dnames_uarray_s dn_buckets;
 
     /* Hashes count applies to string offsets and entry offsets arrays too. */
+<<<<<<< HEAD
+=======
+=======
+#if 0
+    struct Dwarf_P_Dnames_uarray_s dn_cunit_offset;
+    struct Dwarf_P_Dnames_uarray_s dn_tunit_offset;
+    struct Dwarf_P_Dnames_sarray_s dn_sunit_sigs;
+    struct Dwarf_P_Dnames_uarray_s dn_buckets;
+#endif
+    Dwarf_P_Debug                 dn_dbg;
+
+    /*  Hashes count applies to string offsets
+        and entry offsets arrays too. */
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     struct Dwarf_P_Dnames_uarray_s dn_hashes;
     struct Dwarf_P_Dnames_uarray_s dn_string_offsets;
     struct Dwarf_P_Dnames_uarray_s dn_entry_pool;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Small *dn_index_entry_pool;
     Dwarf_Small  dn_index_entry_pool_size;
     Dwarf_Small  dn_index_entry_pool_used;
 
+<<<<<<< HEAD
+=======
+=======
+    Dwarf_Small* dn_index_entry_pool;
+    Dwarf_Small  dn_index_entry_pool_size;
+    Dwarf_Small  dn_index_entry_pool_used;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 };

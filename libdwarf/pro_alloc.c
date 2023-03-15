@@ -52,6 +52,13 @@
 #include <inttypes.h>
 #endif /* HAVE_INTTYPES_H */
 #include "dwarf_tsearch.h"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+#include <Windows.h>
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 /*  When each block is allocated, there is a two-word structure
     allocated at the beginning so the block can go on a list.
@@ -70,6 +77,10 @@
     should be initialized to point at the node itself.  That initializes
     the doubly linked list.  */
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #define LIST_TO_BLOCK(lst) ((void*) (((char *)lst) + sizeof(memory_list_t)))
 #define BLOCK_TO_LIST(blk) ((memory_list_t*) (((char*)blk) - sizeof(memory_list_t)))
 
@@ -78,10 +89,56 @@
   dbg should be NULL only when allocating dbg itself.  In that
   case we initialize it to an empty circular doubly-linked list.
 */
+<<<<<<< HEAD
+=======
+=======
+#define LIST_TO_BLOCK(lst) \
+    ((void*) (((char *)lst) + sizeof(memory_list_t)))
+#define BLOCK_TO_LIST(blk) \
+    ((memory_list_t*) (((char*)blk) - sizeof(memory_list_t)))
+
+    /*
+      dbg should be NULL only when allocating dbg itself.  In that
+      case we initialize it to an empty circular doubly-linked list.
+    */
+
+    /*  When each block is allocated, there is a two-word structure
+        allocated at the beginning so the block can go on a list.
+        The address returned is the address *after* the two pointers
+        at the start.  But this allows us to be given a pointer to
+        a generic block, and go backwards to find the list-node.  Then
+        we can remove this block from it's list without the need to search
+        through a linked list in order to remove the node.  It also allows
+        us to 'delete' a memory block without needing the dbg structure.
+        We still need the dbg structure on allocation so
+        that we know which
+        linked list to add the block to.
+        Only the allocation of the dbg structure itself cannot use
+        _dwarf_p_get_alloc.
+        That structure should be set up by hand, and the two list
+        pointers should be initialized to point at the node itself.
+        That initializes
+        the doubly linked list.  */
+
+#define LIST_TO_BLOCK(lst) \
+    ((void*) (((char *)lst) + sizeof(memory_list_t)))
+#define BLOCK_TO_LIST(blk) \
+    ((memory_list_t*) (((char*)blk) - sizeof(memory_list_t)))
+
+        /*
+          dbg should be NULL only when allocating dbg itself.  In that
+          case we initialize it to an empty circular doubly-linked list.
+        */
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 Dwarf_Ptr
 _dwarf_p_get_alloc(Dwarf_P_Debug dbg, Dwarf_Unsigned size)
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     void *sp;
     memory_list_t *lp = NULL;
     memory_list_t *dbglp = NULL;
@@ -89,10 +146,27 @@ _dwarf_p_get_alloc(Dwarf_P_Debug dbg, Dwarf_Unsigned size)
 
     /* alloc control struct and data block together for performance reasons */
     lp = (memory_list_t *) malloc(size + sizeof(memory_list_t));
+<<<<<<< HEAD
+=======
+=======
+    void* sp;
+    memory_list_t* lp = NULL;
+    memory_list_t* dbglp = NULL;
+    memory_list_t* nextblock = NULL;
+
+    /*  Alloc control struct and data block together
+        for performance reasons */
+    lp = (memory_list_t*)malloc(size + sizeof(memory_list_t));
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     if (lp == NULL) {
         /* should throw an error */
         return NULL;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     /* point to 'size' bytes just beyond lp struct */
     sp = LIST_TO_BLOCK(lp);
@@ -101,6 +175,18 @@ _dwarf_p_get_alloc(Dwarf_P_Debug dbg, Dwarf_Unsigned size)
     if (dbg == NULL) {
         lp->next = lp->prev = lp;
     } else {
+<<<<<<< HEAD
+=======
+=======
+    /* point to 'size' bytes just beyond lp struct */
+    sp = LIST_TO_BLOCK(lp);
+    memset(sp, 0, size);
+    if (dbg == NULL) {
+        lp->next = lp->prev = lp;
+    }
+    else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         /* I always have to draw a picture to understand this part. */
 
         dbglp = BLOCK_TO_LIST(dbg);
@@ -112,11 +198,22 @@ _dwarf_p_get_alloc(Dwarf_P_Debug dbg, Dwarf_Unsigned size)
         lp->next = nextblock;
         nextblock->prev = lp;
     }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     return sp;
 }
 
 /*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
   This routine is only here in case a caller of an older version of the
   library is calling this for some reason.
   This does nothing!
@@ -155,11 +252,35 @@ _dwarf_p_dealloc(UNUSEDARG Dwarf_P_Debug dbg,
         If this is an empty list, the following statements are no-ops, and
         will write to the same memory location they read from.
         This should only happen when we deallocate the dbg structure itself.
+<<<<<<< HEAD
+=======
+=======
+  The dbg structure is not needed here anymore.
+*/
+void
+_dwarf_p_dealloc(Dwarf_Small* ptr) /* ARGSUSED */
+{
+    memory_list_t* lp;
+
+    lp = BLOCK_TO_LIST(ptr);
+    /*  Remove from a doubly linked, circular list.
+        Read carefully, use a white board if necessary.
+        If this is an empty list, the following
+        statements are no-ops, and
+        will write to the same memory location they read from.
+        This should only happen when we deallocate
+        the dbg structure itself.
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     */
     if (lp == lp->next) {
         /*  The list has a single item, itself. */
         lp->prev = 0;
         lp->next = 0;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
     } else if (lp->next == lp->prev) {
         /*  List had exactly two entries. Reduce it to one,
             cutting lp out. */
@@ -167,6 +288,20 @@ _dwarf_p_dealloc(UNUSEDARG Dwarf_P_Debug dbg,
         remaining->next = remaining;
         remaining->prev = remaining;
     } else  {
+<<<<<<< HEAD
+=======
+=======
+    }
+    else if (lp->next == lp->prev) {
+        /*  List had exactly two entries. Reduce it to one,
+            cutting lp out. */
+        memory_list_t* remaining = lp->next;
+        remaining->next = remaining;
+        remaining->prev = remaining;
+    }
+    else {
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         /*  Multi=entry. Just cut lp out. */
         lp->prev->next = lp->next;
         lp->next->prev = lp->prev;
@@ -175,14 +310,32 @@ _dwarf_p_dealloc(UNUSEDARG Dwarf_P_Debug dbg,
     free((void*)lp);
 }
 
+<<<<<<< HEAD
 
 static void
 _dwarf_str_hashtab_freenode(void * nodep)
+=======
+<<<<<<< HEAD
+
+static void
+_dwarf_str_hashtab_freenode(void * nodep)
+=======
+static void
+_dwarf_str_hashtab_freenode(void* nodep)
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 {
     free(nodep);
 }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /*
   This routine deallocates all the nodes on the dbg list,
   and then deallocates the dbg structure itself.
@@ -191,8 +344,18 @@ _dwarf_str_hashtab_freenode(void * nodep)
 void
 _dwarf_p_dealloc_all(Dwarf_P_Debug dbg)
 {
+<<<<<<< HEAD
     memory_list_t *dbglp;
     memory_list_t *base_dbglp;
+=======
+<<<<<<< HEAD
+    memory_list_t *dbglp;
+    memory_list_t *base_dbglp;
+=======
+    memory_list_t* dbglp;
+    memory_list_t* base_dbglp;
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     if (dbg == NULL) {
         /* should throw an error */
@@ -203,14 +366,34 @@ _dwarf_p_dealloc_all(Dwarf_P_Debug dbg)
     dbglp = base_dbglp->next;
 
     while (dbglp != base_dbglp) {
+<<<<<<< HEAD
         memory_list_t*next = dbglp->next;
 
         _dwarf_p_dealloc(dbg, LIST_TO_BLOCK(dbglp));
+=======
+<<<<<<< HEAD
+        memory_list_t*next = dbglp->next;
+
+        _dwarf_p_dealloc(dbg, LIST_TO_BLOCK(dbglp));
+=======
+        memory_list_t* next = dbglp->next;
+
+        _dwarf_p_dealloc(LIST_TO_BLOCK(dbglp));
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
         dbglp = next;
     }
     dwarf_tdestroy(dbg->de_debug_str_hashtab,
         _dwarf_str_hashtab_freenode);
     dwarf_tdestroy(dbg->de_debug_line_str_hashtab,
         _dwarf_str_hashtab_freenode);
+<<<<<<< HEAD
     free((void *)base_dbglp);
+=======
+<<<<<<< HEAD
+    free((void *)base_dbglp);
+=======
+    free((void*)base_dbglp);
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 }

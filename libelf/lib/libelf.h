@@ -24,12 +24,23 @@
 
 #include <stddef.h>	/* for size_t */
 #include <sys/types.h>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #if __LIBELF_INTERNAL__
 #include <sys_elf.h>
 #else /* __LIBELF_INTERNAL__ */
 #include <libelf/sys_elf.h>
 #endif /* __LIBELF_INTERNAL__ */
+<<<<<<< HEAD
+=======
+=======
+#include <sys_elf.h>
+
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #if defined __GNUC__ && !defined __cplusplus
 #define DEPRECATED	__attribute__((deprecated))

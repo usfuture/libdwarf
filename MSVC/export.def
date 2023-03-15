@@ -214,6 +214,13 @@ EXPORTS
   dwarf_attr_offset
   dwarf_get_section_max_offsets
   dwarf_set_frame_rule_inital_value
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  dwarf_pro_set_default_string_form
+>>>>>>> 7cd586f (refactored to work with dwarf export)
+>>>>>>> 9c45ac7 (refactored to work with dwarf export)
   dwarf_set_frame_rule_table_size
   dwarf_get_ranges
   dwarf_ranges_dealloc
