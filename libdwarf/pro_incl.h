@@ -69,10 +69,6 @@
     }
 #endif /* BIG- LITTLE-ENDIAN */
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 #ifdef WORDS_BIGENDIAN
 #define ASNOUT(t,s,l)                       \
     do {                                    \
@@ -100,8 +96,6 @@
         dbg->de_copy_word(t,(const void *)p,l); \
     } while (0)
 #endif /* ENDIANNESS */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 #if defined(sparc) && defined(sun)
 #define REL32 Elf32_Rela

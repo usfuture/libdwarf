@@ -47,12 +47,6 @@
 
 #define FALSE 0
 #define TRUE  1
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
 #define SIZEOFT16 2
 #define SIZEOFT32 4
 #define SIZEOFT64 8
@@ -90,8 +84,6 @@ Dwarf_Unsigned stroffsets[1] = { 0x42 }; /* main */
 
 /* Set to match subprog */
 Dwarf_Unsigned dieoffset[1] = { 12 };
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 int
 dwarf_force_debug_names(Dwarf_P_Debug dbg,
@@ -118,10 +110,6 @@ dwarf_force_debug_names(Dwarf_P_Debug dbg,
 
     return DW_DLV_OK;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
 int
 dwarf_force_dnames(Dwarf_P_Debug dbg,
@@ -287,5 +275,3 @@ dwarf_force_dnames(Dwarf_P_Debug dbg,
 #endif
     return DW_DLV_OK;
 }
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)

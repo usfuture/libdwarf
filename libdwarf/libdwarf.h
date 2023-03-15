@@ -931,37 +931,6 @@ Old names above with same values. */
 
 /* libdwarf error numbers
 */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-#define DW_DLE_NE          0     /* no error */
-#define DW_DLE_VMM         1     /* dwarf format/library version mismatch */
-#define DW_DLE_MAP         2     /* memory map failure */
-#define DW_DLE_LEE         3     /* libelf error */
-#define DW_DLE_NDS         4     /* no debug section */
-#define DW_DLE_NLS         5     /* no line section */
-#define DW_DLE_ID          6     /* invalid descriptor for query */
-#define DW_DLE_IOF         7     /* I/O failure */
-#define DW_DLE_MAF         8     /* memory allocation failure */
-#define DW_DLE_IA          9     /* invalid argument */
-#define DW_DLE_MDE         10     /* mangled debugging entry */
-#define DW_DLE_MLE         11     /* mangled line number entry */
-#define DW_DLE_FNO         12     /* file not open */
-#define DW_DLE_FNR         13     /* file not a regular file */
-#define DW_DLE_FWA         14     /* file open with wrong access */
-#define DW_DLE_NOB         15     /* not an object file */
-#define DW_DLE_MOF         16     /* mangled object file header */
-#define DW_DLE_EOLL        17     /* end of location list entries */
-#define DW_DLE_NOLL        18     /* no location list section */
-#define DW_DLE_BADOFF      19     /* Invalid offset */
-#define DW_DLE_EOS         20     /* end of section  */
-#define DW_DLE_ATRUNC      21     /* abbreviations section appears truncated*/
-#define DW_DLE_BADBITC     22     /* Address size passed to dwarf bad*/
-                    /* It is not an allowed size (64 or 32) */
-<<<<<<< HEAD
-=======
-=======
 /* libdwarf error numbers */
 #define DW_DLE_NE      0  /* no error */
 #define DW_DLE_VMM     1  /* dwarf format/library version mismatch */
@@ -987,8 +956,6 @@ Old names above with same values. */
 #define DW_DLE_ATRUNC  21 /* abbreviations section appears truncated*/
 #define DW_DLE_BADBITC 22 /* Address size passed to dwarf bad,*/
     /* It is not an allowed size (64 or 32) */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     /* Error codes defined by the current Libdwarf Implementation. */
 #define DW_DLE_DBG_ALLOC                        23
 #define DW_DLE_FSTAT_ERROR                      24
@@ -1024,15 +991,7 @@ Old names above with same values. */
 #define DW_DLE_DEBUG_LINE_LENGTH_BAD            54
 #define DW_DLE_LINE_PROLOG_LENGTH_BAD           55
 #define DW_DLE_LINE_NUM_OPERANDS_BAD            56
-<<<<<<< HEAD
-#define DW_DLE_LINE_SET_ADDR_ERROR              57 /* No longer used. */
-=======
-<<<<<<< HEAD
-#define DW_DLE_LINE_SET_ADDR_ERROR              57 /* No longer used. */
-=======
 #define DW_DLE_LINE_SET_ADDR_ERROR              57
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #define DW_DLE_LINE_EXT_OPCODE_BAD              58
 #define DW_DLE_DWARF_LINE_NULL                  59
 #define DW_DLE_INCL_DIR_NUM_BAD                 60
@@ -1441,17 +1400,6 @@ Old names above with same values. */
 #define DW_DLE_PRO_INIT_EXTRAS_UNKNOWN         462
 #define DW_DLE_PRO_INIT_EXTRAS_ERR             463
 #define DW_DLE_NULL_ARGS_DWARF_ADD_PATH        464
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-
-    /* LAST MUST EQUAL LAST ERROR NUMBER */
-#define DW_DLE_LAST        464
-
-<<<<<<< HEAD
-=======
-=======
 #define DW_DLE_DWARF_INIT_DBG_NULL             465
 #define DW_DLE_ELF_RELOC_SECTION_ERROR         466
 #define DW_DLE_USER_DECLARED_ERROR             467
@@ -1489,8 +1437,6 @@ Old names above with same values. */
 
 /*! @note DW_DLE_LAST MUST EQUAL LAST ERROR NUMBER */
 #define DW_DLE_LAST        497
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #define DW_DLE_LO_USER     0x10000
 
     /*  Taken as meaning 'undefined value', this is not

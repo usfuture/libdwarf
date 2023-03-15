@@ -55,14 +55,8 @@ typedef signed short Dwarf_Shalf;
 #define DWARF_32BIT_SIZE 4
 #define DWARF_64BIT_SIZE 8
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
 #define DWARF_DRD_BUFFER_VERSION 2
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /*
     producer:
     This struct is used to hold information about all
@@ -84,15 +78,7 @@ typedef struct Dwarf_P_F_Entry_s *Dwarf_P_F_Entry;
     This struct holds information for each cie. Defn in pro_frame.h
 */
 typedef struct Dwarf_P_Cie_s *Dwarf_P_Cie;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
 typedef Dwarf_Unsigned                Dwarf_Tag;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /*
     producer:
     Struct to hold line number information, different from
@@ -100,16 +86,10 @@ typedef Dwarf_Unsigned                Dwarf_Tag;
 */
 typedef struct Dwarf_P_Line_s *Dwarf_P_Line;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 typedef struct Dwarf_P_Debug_s* Dwarf_P_Debug;
 typedef struct Dwarf_P_Die_s* Dwarf_P_Die;
 typedef struct Dwarf_P_Attribute_s* Dwarf_P_Attribute;
 typedef struct Dwarf_P_Fde_s* Dwarf_P_Fde;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /*
     producer:
     Struct to hold information about address ranges.
@@ -121,20 +101,6 @@ typedef struct Dwarf_P_Per_Reloc_Sect_s *Dwarf_P_Per_Reloc_Sect;
 typedef struct Dwarf_P_Per_Sect_String_Attrs_s *Dwarf_P_Per_Sect_String_Attrs;
 typedef struct Dwarf_P_Dnames_s *Dwarf_P_Dnames;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-/* Defined to get at the elf section numbers and section name
-   indices in symtab for the dwarf sections
-   Must match .rel.* names in _dwarf_rel_section_names
-   exactly.
-*/
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 #define         DEBUG_INFO      0
 #define         DEBUG_LINE      1
 #define         DEBUG_ABBREV    2
@@ -156,22 +122,10 @@ typedef struct Dwarf_P_Dnames_s *Dwarf_P_Dnames;
 #define         DEBUG_MACRO     18 /* DWARF 5. */
 #define         DEBUG_LOCLISTS  19 /* DWARF 5. */
 #define         DEBUG_RNGLISTS  20 /* DWARF 5. */
-<<<<<<< HEAD
-
-/* Maximum number of debug_* sections not including the relocations */
-#define         NUM_DEBUG_SECTIONS      21
-=======
-<<<<<<< HEAD
-
-/* Maximum number of debug_* sections not including the relocations */
-#define         NUM_DEBUG_SECTIONS      21
-=======
 #define         DEBUG_SUP       21 /* DWARF 5. */
 
 /* Maximum number of debug_* sections not including the relocations */
 #define         NUM_DEBUG_SECTIONS      22
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 /*  The FORM codes available are defined in DWARF5
     on page 158, DW_LNCT_path  */
@@ -218,17 +172,6 @@ struct Dwarf_P_Line_Inits_s {
     struct Dwarf_P_Line_format_s pi_fileformats[DW_LINE_FORMATS_MAX];
 };
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-
-struct Dwarf_P_Die_s {
-    Dwarf_Unsigned di_offset; /* offset in debug info */
-    char *di_abbrev;  /* abbreviation */
-<<<<<<< HEAD
-=======
-=======
 /*  To enable DWARF5 testing. July 2020 */
 struct Dwarf_P_Debug_Sup_s {
     Dwarf_Half     ds_version; /* 2 */
@@ -242,24 +185,12 @@ struct Dwarf_P_Debug_Sup_s {
 struct Dwarf_P_Die_s {
     Dwarf_Unsigned di_offset; /* offset in debug info */
     char* di_abbrev;  /* abbreviation */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Unsigned di_abbrev_nbytes; /* # of bytes in abbrev */
     Dwarf_Tag di_tag;
     Dwarf_P_Die di_parent; /* parent of current die */
     Dwarf_P_Die di_child; /* first child */
-<<<<<<< HEAD
-    /*  The last child field makes linking up children an O(1) operation,
-        See pro_die.c. */
-=======
-<<<<<<< HEAD
-    /*  The last child field makes linking up children an O(1) operation,
-        See pro_die.c. */
-=======
     /*  The last child field makes linking up children
         an O(1) operation, See pro_die.c. */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_P_Die di_last_child;
     Dwarf_P_Die di_left; /* left sibling */
     Dwarf_P_Die di_right; /* right sibling */
@@ -270,28 +201,12 @@ struct Dwarf_P_Die_s {
     Dwarf_Unsigned di_marker;   /* used to attach symbols to dies */
 };
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /* producer fields */
 struct Dwarf_P_Attribute_s {
     Dwarf_Half ar_attribute; /* Attribute Value. */
     Dwarf_Half ar_attribute_form; /* Attribute Form. */
     Dwarf_P_Die ar_ref_die; /* die pointer if form ref */
-<<<<<<< HEAD
-    char *ar_data; /* data, format given by form */
-=======
-<<<<<<< HEAD
-    char *ar_data; /* data, format given by form */
-=======
     char* ar_data; /* data, format given by form */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Unsigned ar_nbytes; /* no. of bytes of data */
     Dwarf_Unsigned ar_rel_symidx; /* when attribute has a
         relocatable value, holds
@@ -299,15 +214,7 @@ struct Dwarf_P_Attribute_s {
     Dwarf_Unsigned ar_debug_str_offset; /* Offset in .debug_str
         if non-zero. Zero offset never assigned a string. */
     Dwarf_Ubyte ar_rel_type;  /* relocation type */
-<<<<<<< HEAD
-    Dwarf_Unsigned ar_rel_offset; /* Offset of relocation within block */
-=======
-<<<<<<< HEAD
-    Dwarf_Unsigned ar_rel_offset; /* Offset of relocation within block */
-=======
     Dwarf_Unsigned ar_rel_offset; /* Offset of reloc within block */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     char ar_reloc_len; /* Number of bytes that relocation
         applies to. 4 or 8. Unused and may
         be 0 if if ar_rel_type is
@@ -326,40 +233,18 @@ struct Dwarf_P_Attribute_s {
 ** Like the struct hack, but legal ANSI C.
 */
 struct dw_macinfo_block_s {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    struct dw_macinfo_block_s *mb_next;
-    unsigned long mb_avail_len;
-    unsigned long mb_used_len;
-    unsigned long mb_macinfo_data_space_len;
-    char *mb_data;/* original malloc ptr. */
-<<<<<<< HEAD
-=======
-=======
     struct dw_macinfo_block_s* mb_next;
     unsigned long mb_avail_len;
     unsigned long mb_used_len;
     unsigned long mb_macinfo_data_space_len;
     char* mb_data;/* original malloc ptr. */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 };
 
 /*  dwarf_sn_kind is for the array of similarly-treated
     name -> cu ties
 */
-<<<<<<< HEAD
-enum dwarf_sn_kind { dwarf_snk_pubname,  /* .debug_pubnames */
-=======
-<<<<<<< HEAD
-enum dwarf_sn_kind { dwarf_snk_pubname,  /* .debug_pubnames */
-=======
 enum dwarf_sn_kind {
     dwarf_snk_pubname,  /* .debug_pubnames */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     dwarf_snk_funcname,  /* SGI extension. */
     dwarf_snk_weakname,  /* SGI extension. */
     dwarf_snk_typename,  /* SGI extension. */
@@ -368,30 +253,12 @@ enum dwarf_sn_kind {
     dwarf_snk_entrycount /* this one must be last */
 };
 
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 /* The calls to add a varname etc use a list of
    these as the list.
 */
 struct Dwarf_P_Simple_nameentry_s {
     Dwarf_P_Die sne_die;
-<<<<<<< HEAD
-    char *sne_name;
-=======
-<<<<<<< HEAD
-    char *sne_name;
-=======
     char* sne_name;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     int sne_name_len;
     Dwarf_P_Simple_nameentry sne_next;
 };
@@ -421,19 +288,9 @@ typedef int (*_dwarf_pro_reloc_length_func_ptr) (Dwarf_P_Debug dbg,
     Dwarf_Unsigned end_symidx,
     enum Dwarf_Rel_Type type,
     int reltarget_length);
-<<<<<<< HEAD
-typedef int (*_dwarf_pro_transform_relocs_func_ptr) (Dwarf_P_Debug dbg,
-    Dwarf_Signed *
-=======
-<<<<<<< HEAD
-typedef int (*_dwarf_pro_transform_relocs_func_ptr) (Dwarf_P_Debug dbg,
-    Dwarf_Signed *
-=======
 typedef int (*_dwarf_pro_transform_relocs_func_ptr)
 (Dwarf_P_Debug dbg,
     Dwarf_Signed*
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     new_sec_count);
 
 /*
@@ -445,14 +302,6 @@ typedef int (*_dwarf_pro_transform_relocs_func_ptr)
     Before returning reloc data to caller,
     we switch to a single, long-enough,
     block.
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     We make counters here Dwarf_Unsigned so that we
     get sufficient alignment. Since we use space after
     the struct (at malloc time) for user data which
@@ -462,25 +311,11 @@ typedef int (*_dwarf_pro_transform_relocs_func_ptr)
 struct Dwarf_P_Relocation_Block_s {
     Dwarf_Unsigned rb_slots_in_block; /* slots in block, as created */
     Dwarf_Unsigned rb_next_slot_to_use; /* counter, start at 0. */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    struct Dwarf_P_Relocation_Block_s *rb_next;
-    char *rb_where_to_add_next; /* pointer to next slot (might be past
-        end, depending on
-        rb_next_slot_to_use) */
-    char *rb_data; /* data area */
-<<<<<<< HEAD
-=======
-=======
     struct Dwarf_P_Relocation_Block_s* rb_next;
     char* rb_where_to_add_next; /* pointer to next slot
         (might be past end, depending on
         rb_next_slot_to_use) */
     char* rb_data; /* data area */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 };
 
 /* One of these per potential relocation section
@@ -500,39 +335,17 @@ struct Dwarf_P_Per_Reloc_Sect_s {
         call, this is the sect
         number of the relocation section. */
 
-<<<<<<< HEAD
-    /* singly-linked list. add at and ('last') with count of blocks */
-    struct Dwarf_P_Relocation_Block_s *pr_first_block;
-    struct Dwarf_P_Relocation_Block_s *pr_last_block;
-=======
-<<<<<<< HEAD
-    /* singly-linked list. add at and ('last') with count of blocks */
-    struct Dwarf_P_Relocation_Block_s *pr_first_block;
-    struct Dwarf_P_Relocation_Block_s *pr_last_block;
-=======
         /* singly-linked list. add at and ('last') with count of blocks */
     struct Dwarf_P_Relocation_Block_s* pr_first_block;
     struct Dwarf_P_Relocation_Block_s* pr_last_block;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     unsigned long pr_block_count;
 };
 
 #define DEFAULT_SLOTS_PER_BLOCK 3
 
 typedef struct memory_list_s {
-<<<<<<< HEAD
-  struct memory_list_s *prev;
-  struct memory_list_s *next;
-=======
-<<<<<<< HEAD
-  struct memory_list_s *prev;
-  struct memory_list_s *next;
-=======
     struct memory_list_s* prev;
     struct memory_list_s* next;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 } memory_list_t;
 
 struct Dwarf_P_Per_Sect_String_Attrs_s {
@@ -545,15 +358,7 @@ struct Dwarf_P_Per_Sect_String_Attrs_s {
 struct Dwarf_P_debug_str_entry_s {
     Dwarf_P_Debug  dse_dbg;
     /*  Name used initially with tfind. */
-<<<<<<< HEAD
-    char *dse_name;
-=======
-<<<<<<< HEAD
-    char *dse_name;
-=======
     char* dse_name;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     Dwarf_Unsigned dse_slen; /* includes space for NUL terminator */
 
@@ -583,18 +388,8 @@ struct Dwarf_P_Stats_s {
 
 /* Fields used by producer */
 struct Dwarf_P_Debug_s {
-<<<<<<< HEAD
-    /*  Used to catch dso passing dbg to another DSO with incompatible
-        version of libdwarf See PRO_VERSION_MAGIC */
-=======
-<<<<<<< HEAD
-    /*  Used to catch dso passing dbg to another DSO with incompatible
-        version of libdwarf See PRO_VERSION_MAGIC */
-=======
     /*  Used to catch dso passing dbg to another DSO with
         incompatible version of libdwarf See PRO_VERSION_MAGIC */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     int de_version_magic_number;
 
     Dwarf_Handler de_errhand;
@@ -603,25 +398,11 @@ struct Dwarf_P_Debug_s {
         used by libdwarf except to pass the data as a callback
         argument.  New in June 2011. Available in
         dwarf_pro_init_c() and its callback function.  */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    void *    de_user_data;
-    Dwarf_Ptr de_errarg;
-
-    /*  Call back function, used to create .debug* sections. Provided
-        By user.  */
-<<<<<<< HEAD
-=======
-=======
     void* de_user_data;
     Dwarf_Ptr de_errarg;
 
     /*  Call back function, used to create .debug* sections.
         Provided by library user.  */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Callback_Func de_callback_func;
 
     /*  Flags from producer_init call */
@@ -638,25 +419,11 @@ struct Dwarf_P_Debug_s {
 
     /* If form DW_FORM_strp */
     Dwarf_P_Section_Data de_debug_str;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    void *de_debug_str_hashtab; /* for tsearch */
-
-    /* .debug_line_str section data if form DW_FORM_line_strp */
-    Dwarf_P_Section_Data de_debug_line_str;
-    void *de_debug_line_str_hashtab; /* for tsearch */
-<<<<<<< HEAD
-=======
-=======
     void* de_debug_str_hashtab; /* for tsearch */
 
     /* .debug_line_str section data if form DW_FORM_line_strp */
     Dwarf_P_Section_Data de_debug_line_str;
     void* de_debug_line_str_hashtab; /* for tsearch */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     /*  Pointer to the 'current active' section */
     Dwarf_P_Section_Data de_current_active_section;
@@ -688,15 +455,9 @@ struct Dwarf_P_Debug_s {
     Dwarf_P_Fde de_last_fde;
     Dwarf_Unsigned de_n_fde;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
     /* It's just one small record */
     struct Dwarf_P_Debug_Sup_s de_debug_sup;
 
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     /* First die, leads to all others */
     Dwarf_P_Die de_dies;
 
@@ -709,20 +470,6 @@ struct Dwarf_P_Debug_s {
         before disk form */
     Dwarf_P_Dnames de_dnames;
     Dwarf_P_Section_Data de_dnames_sect;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-
-    /* macinfo controls. */
-    /* first points to beginning of the list during creation */
-    struct dw_macinfo_block_s *de_first_macinfo;
-
-    /* current points to the current, unfilled, block */
-    struct dw_macinfo_block_s *de_current_macinfo;
-<<<<<<< HEAD
-=======
-=======
     Dwarf_Bool     de_force_dnames;
 
     /* macinfo controls. */
@@ -731,8 +478,6 @@ struct Dwarf_P_Debug_s {
 
     /* current points to the current, unfilled, block */
     struct dw_macinfo_block_s* de_current_macinfo;
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     /* Pointer to the first section, to support reset_section_bytes */
     Dwarf_P_Section_Data de_first_debug_sect;
@@ -742,46 +487,21 @@ struct Dwarf_P_Debug_s {
     struct Dwarf_P_Simple_name_header_s
         de_simple_name_headers[dwarf_snk_entrycount];
 
-<<<<<<< HEAD
-    /*  Relocation data. not all sections will actally have relocation
-        info, of course.  de_reloc_sect, de_elf_sects, and de_sect_name_idx
-=======
-<<<<<<< HEAD
-    /*  Relocation data. not all sections will actally have relocation
-        info, of course.  de_reloc_sect, de_elf_sects, and de_sect_name_idx
-=======
     /*  Relocation data. not all sections will actally have
         relocation info, of course.  de_reloc_sect,
         de_elf_sects, and de_sect_name_idx
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
         arrays are exactly in parallel. Not every de_elf_sect has
         any relocations for it, of course. */
     struct Dwarf_P_Per_Reloc_Sect_s de_reloc_sect[NUM_DEBUG_SECTIONS];
     int de_reloc_next_to_return; /* iterator on reloc sections
         (SYMBOLIC output) */
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    /*  Used in remembering sections. See de_reloc_sect above.  */
-    int de_elf_sects[NUM_DEBUG_SECTIONS];  /* elf sect number of
-        the section itself, DEBUG_LINE for example */
-
-    /*  Section name index or handle for the name of the symbol for
-        DEBUG_LINE for example */
-<<<<<<< HEAD
-=======
-=======
         /*  Used in remembering sections. See de_reloc_sect above.  */
     int de_elf_sects[NUM_DEBUG_SECTIONS];  /* elf sect number of
         the section itself, DEBUG_LINE for example */
 
         /*  Section name index or handle for the name of the symbol for
             DEBUG_LINE for example */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     Dwarf_Unsigned de_sect_name_idx[NUM_DEBUG_SECTIONS];
 
     int de_offset_reloc; /* offset reloc type, R_MIPS_32 for
@@ -798,18 +518,8 @@ struct Dwarf_P_Debug_s {
         that producing an IRIX exception-table offset in a CIE header
         is allowed (depending on the augmentation string). */
 
-<<<<<<< HEAD
-    unsigned char de_dwarf_offset_size; /* dwarf  offset size. */
-    unsigned char de_elf_offset_size;  /* object section offset size. */
-=======
-<<<<<<< HEAD
-    unsigned char de_dwarf_offset_size; /* dwarf  offset size. */
-    unsigned char de_elf_offset_size;  /* object section offset size. */
-=======
     unsigned char de_dwarf_offset_size; /* dwarf offset size. */
     unsigned char de_elf_offset_size; /* object sec offset size. */
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     unsigned char de_pointer_size; /* size of address in target. */
 
     /*  Added April 19, 2017.  For DWARF5 */
@@ -822,24 +532,6 @@ struct Dwarf_P_Debug_s {
         symbolic) */
 
     unsigned char de_64bit_extension;/* non-zero if creating 64 bit
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-        offsets using dwarf2-99
-        extension proposal */
-
-    unsigned char de_output_version; /* 2,3,4, or 5. The version number
-        of the output. (not necessarily that of each section,
-        which depends on the base version). */
-
-    /*  Defaults will be mostly useless, but such do exist */
-    unsigned       de_big_endian; /* if 0 target is little-endian */
-
-    int de_ar_data_attribute_form; /* data8, data4 abi &version dependent */
-<<<<<<< HEAD
-=======
-=======
         offsets using dwarf3 extension, else using SGI pre-
         DWARF3 64bit length (unit_length) */
 
@@ -853,8 +545,6 @@ struct Dwarf_P_Debug_s {
     /* data8, data4 abi &version dependent */
     int de_ar_data_attribute_form;
 
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
     int de_ar_ref_attr_form; /* ref8 ref4 , abi dependent */
 
     /* simple name relocations */
@@ -870,25 +560,6 @@ struct Dwarf_P_Debug_s {
     unsigned long de_compose_used_len;
 
     unsigned char de_same_endian;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    void (*de_copy_word) (void *, const void *, unsigned long);
-
-    /*  Add new fields at the END of this struct to preserve some hope
-        of sensible behavior on dbg passing between DSOs linked with
-        mismatched libdwarf producer versions. */
-
-    Dwarf_P_Marker de_markers;  /* pointer to array of markers */
-    unsigned de_marker_n_alloc;
-    unsigned de_marker_n_used;
-    int de_sect_sa_next_to_return;  /* Iterator on sring attrib sects */
-    /* String attributes data of each section. */
-    struct Dwarf_P_Per_Sect_String_Attrs_s de_sect_string_attr[NUM_DEBUG_SECTIONS];
-<<<<<<< HEAD
-=======
-=======
     void (*de_copy_word) (void*, const void*, unsigned long);
 
     /*  Add new fields at the END of this struct to preserve
@@ -901,8 +572,6 @@ struct Dwarf_P_Debug_s {
     /* String attributes data of each section. */
     struct Dwarf_P_Per_Sect_String_Attrs_s
         de_sect_string_attr[NUM_DEBUG_SECTIONS];
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
     /* Hold data needed to init line output flexibly. */
     struct Dwarf_P_Line_Inits_s de_line_inits;
@@ -910,21 +579,6 @@ struct Dwarf_P_Debug_s {
     struct Dwarf_P_Stats_s de_stats;
 };
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-#define CURRENT_VERSION_STAMP   2
-
-int _dwarf_add_simple_name_entry(Dwarf_P_Debug dbg,
-    Dwarf_P_Die die,
-    char *entry_name,
-    enum dwarf_sn_kind
-    entrykind,
-    Dwarf_Error * error);
-<<<<<<< HEAD
-=======
-=======
 #define VERSION_STAMP2   2
 
 int _dwarf_add_simple_name_entry(Dwarf_P_Debug dbg,
@@ -933,8 +587,6 @@ int _dwarf_add_simple_name_entry(Dwarf_P_Debug dbg,
     enum dwarf_sn_kind
     entrykind,
     Dwarf_Error* error);
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
 
 enum dwarf_which_hash {
     _dwarf_hash_debug_str,
@@ -944,22 +596,6 @@ enum dwarf_which_hash {
 
 int
 _dwarf_insert_or_find_in_debug_str(Dwarf_P_Debug dbg,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9c45ac7 (refactored to work with dwarf export)
-    char *name,
-    enum  dwarf_which_hash,
-    unsigned slen, /* includes space for trailing NUL */
-    Dwarf_Unsigned *offset_in_debug_str,
-    Dwarf_Error *error);
-
-int _dwarf_log_extra_flagstrings(Dwarf_P_Debug dbg,
-  const char *extra,
-  int *err);
-<<<<<<< HEAD
-=======
-=======
     char* name,
     enum  dwarf_which_hash,
     unsigned slen, /* includes space for trailing NUL */
@@ -969,5 +605,3 @@ int _dwarf_log_extra_flagstrings(Dwarf_P_Debug dbg,
 int _dwarf_log_extra_flagstrings(Dwarf_P_Debug dbg,
     const char* extra,
     int* err);
->>>>>>> 7cd586f (refactored to work with dwarf export)
->>>>>>> 9c45ac7 (refactored to work with dwarf export)

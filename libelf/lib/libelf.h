@@ -24,8 +24,8 @@
 
 #include <stddef.h>	/* for size_t */
 #include <sys/types.h>
-
 #include <sys_elf.h>
+
 
 #if defined __GNUC__ && !defined __cplusplus
 #define DEPRECATED	__attribute__((deprecated))
